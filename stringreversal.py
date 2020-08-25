@@ -5,11 +5,9 @@ class StringReversal:
         self.new_list=new_list
         self.new_string=new_string
 
-
     def listify(self):
         self.orig_list=list(self.input)
 
-    
     def a_new_list(self):
         while len(self.orig_list)!=0:
             self.new_list.append(self.orig_list[-1])
