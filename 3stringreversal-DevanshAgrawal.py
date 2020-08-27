@@ -1,29 +1,32 @@
 class StringReversal:
-    def __init__(self, string_input, input_list, reverse_list, new_reverse_string):
-        self.string_input=string_input
-        self.input_list=input_list
-        self.reverse_list=reverse_list
-        self.new_reverse_string=new_reverse_string
+    def __init__(self, original_string):
+        self.original_string=original_string
+        self.foward_list = []
+        self.reversed_list = []
+        self.reversed_string = ""
+
+    def string_processor(self):
+        #runs the methods needed to reverse string
+        self.listify()
+        self.list_reverser()
+        self.stringify()
 
     def listify(self):
-        self.input_list=list(self.string_input)
+        #turns original string into list
+        self.foward_list=list(self.original_string)
 
     def list_reverser(self):
-        while len(self.input_list)!=0:
-            self.reverse_list.append(self.input_list[-1])
-            self.input_list.pop(-1)
+        #reverses list
+        self.reversed_list=list(reversed(self.foward_list))
     
     def stringify(self):
-        for i in self.reverse_list:
-            self.new_reverse_string+=i
+        #turns reversed list into string
+        self.reversed_string = f"".join(self.reversed_list)
         
     def __str__(self):
-        return f"Your original string was {self.string_input}, and your new string is {self.new_reverse_string}"
+        return f"Your original string was {self.original_string}, and your new string is {self.reversed_string}"
 
-
-inputter=input('What string do you want to reverse:')
-my_string=StringReversal(inputter, [], [], "")
-my_string.listify()
-my_string.list_reverser()
-my_string.stringify()
+inputter=input('What string do you want to reverse?: ')
+my_string=StringReversal(inputter)
+my_string.string_processor()
 print(my_string)
