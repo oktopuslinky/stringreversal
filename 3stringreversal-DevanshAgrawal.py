@@ -7,11 +7,11 @@ class StringReversal:
 
     def string_processor(self):
         #runs the methods needed to reverse string
-        self.listify()
+        self.string_to_list()
         self.list_reverser()
-        self.stringify()
+        self.list_to_string()
 
-    def listify(self):
+    def string_to_list(self):
         #turns original string into list
         self.foward_list = list(self.original_string)
 
@@ -19,7 +19,7 @@ class StringReversal:
         #reverses list
         self.reversed_list = list(reversed(self.foward_list))
     
-    def stringify(self):
+    def list_to_string(self):
         #turns reversed list into string
         self.reversed_string = f"".join(self.reversed_list)
         
